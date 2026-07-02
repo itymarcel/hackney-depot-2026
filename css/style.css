@@ -14,10 +14,11 @@
 html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Arimo", Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: var(--black);
   background: #ffffff;
   font-size: 1rem;
+  font-weight: 500;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -44,7 +45,7 @@ a { color: inherit; }
 
 .site-header .logo img {
   width: auto;
-  height: 2.4rem;
+  height: 3.4rem;
 }
 
 .site-nav {
@@ -53,14 +54,15 @@ a { color: inherit; }
 }
 
 .site-nav a {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 1.25rem;
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .site-nav a:hover,
+.site-nav a.active { text-decoration: underline; text-underline-offset: 0.2em; }
+
 .site-nav a.active { color: var(--accent); }
 
 .nav-toggle {
@@ -68,9 +70,8 @@ a { color: inherit; }
   background: none;
   border: 0;
   font: inherit;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 1.25rem;
+  font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -96,22 +97,34 @@ a { color: inherit; }
   left: 0; right: 0; bottom: 0;
   padding: var(--pad);
   padding-bottom: clamp(2rem, 6vh, 4rem);
-  color: #fff;
-  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 6vw, 4.75rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-  max-width: 18ch;
+  line-height: 1.25;
+  text-transform: uppercase;
+  max-width: 22ch;
+}
+
+.hero h1 .boxed {
+  display: inline;
+  background: #fff;
+  color: var(--black);
+  padding: 0.05em 0.18em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .hero p {
-  margin-top: 1rem;
-  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.6em 0.8em;
+  background: #fff;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
   max-width: 44ch;
 }
 
@@ -130,27 +143,25 @@ main { display: block; }
 }
 
 .kicker {
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-size: 0.9rem;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1rem;
 }
 
 h1.display, h2.display {
-  font-size: clamp(2rem, 5.5vw, 4.25rem);
+  font-size: clamp(1.9rem, 4.8vw, 3.75rem);
   font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  line-height: 1.08;
+  text-transform: uppercase;
   text-wrap: balance;
 }
 
 .statement {
   font-size: clamp(1.4rem, 3.2vw, 2.5rem);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.2;
-  letter-spacing: -0.01em;
   max-width: 34ch;
   text-wrap: balance;
 }
@@ -184,9 +195,7 @@ h1.display, h2.display {
 
 figure figcaption {
   margin-top: 0.5rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
   color: var(--grey);
 }
 
@@ -214,19 +223,18 @@ figure figcaption {
 
 .teaser h3 {
   margin-top: 0.9rem;
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
+
+.teaser:hover h3 { text-decoration: underline; text-underline-offset: 0.2em; }
 
 .teaser p {
   margin-top: 0.35rem;
   font-size: 0.95rem;
   color: var(--grey);
 }
-
-.teaser:hover h3 { color: var(--accent); }
 
 /* ---------- facts list ---------- */
 
@@ -245,9 +253,7 @@ figure figcaption {
 }
 
 .facts li span:first-child {
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
   color: var(--grey);
   padding-top: 0.15em;
   flex-shrink: 0;
@@ -259,11 +265,10 @@ figure figcaption {
 
 .btn {
   display: inline-block;
-  padding: 0.85rem 1.6rem;
-  border: 1px solid var(--black);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--black);
+  font-size: 0.95rem;
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
@@ -302,18 +307,15 @@ figure figcaption {
   gap: 2rem;
   padding: 0.9rem 0;
   font-size: clamp(1.3rem, 3vw, 2.2rem);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 700;
   line-height: 1.1;
   text-decoration: none;
 }
 
 .tenants li i {
   font-style: normal;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 400;
   color: var(--grey);
   text-align: right;
   flex-shrink: 0;
@@ -333,13 +335,14 @@ figure figcaption {
 }
 
 .ig-head a {
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-size: 0.9rem;
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--accent);
 }
+
+.ig-head a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 
 .ig-grid a {
   display: block;
@@ -397,7 +400,6 @@ figure figcaption {
 .site-footer .wordmark {
   font-size: clamp(1.6rem, 4vw, 3rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
   line-height: 1;
   color: var(--accent);
   text-transform: uppercase;
@@ -411,9 +413,8 @@ figure figcaption {
 }
 
 .site-footer h4 {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--grey);
   margin-bottom: 0.75rem;
@@ -440,9 +441,7 @@ figure figcaption {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.8rem;
   color: var(--grey);
 }
 
