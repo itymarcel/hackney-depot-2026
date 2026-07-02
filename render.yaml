@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: hackney-depot
+    runtime: static
+    staticPublishPath: .
+    headers:
+      - path: /images/*
+        name: Cache-Control
+        value: public, max-age=604800
