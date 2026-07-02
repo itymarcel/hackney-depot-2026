@@ -71,13 +71,33 @@ h1, h2 {
 
 .nav-toggle {
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
   background: none;
   border: 0;
-  font: inherit;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-transform: uppercase;
   cursor: pointer;
+}
+
+.nav-toggle-icon,
+.nav-toggle-icon::before {
+  display: block;
+  width: 1.75rem;
+  height: 4px;
+  background: currentColor;
+}
+
+.nav-toggle-icon {
+  position: relative;
+  transform: translateY(-4px);
+}
+
+.nav-toggle-icon::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
 }
 
 /* ---------- hero ---------- */
@@ -458,7 +478,7 @@ figure figcaption {
 /* ---------- responsive ---------- */
 
 @media (max-width: 760px) {
-  .nav-toggle { display: block; }
+  .nav-toggle { display: inline-flex; }
 
   .site-nav {
     display: none;
