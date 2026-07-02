@@ -14,7 +14,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 
 body {
-  font-family: "Arimo", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Google Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: var(--black);
   background: #ffffff;
   font-size: 1rem;
@@ -26,6 +26,10 @@ body {
 img { display: block; width: 100%; height: auto; }
 
 a { color: inherit; }
+
+h1, h2 {
+  letter-spacing: -3px;
+}
 
 /* ---------- header ---------- */
 
