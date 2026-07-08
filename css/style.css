@@ -344,7 +344,7 @@ figure figcaption {
 .tenants li > a,
 .tenants li > span {
   display: flex;
-  align-items: top;
+  align-items: center;
   justify-content: space-between;
   gap: 2rem;
   padding: 0.9rem 0;
