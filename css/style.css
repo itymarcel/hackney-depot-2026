@@ -29,6 +29,8 @@ a { color: inherit; }
 
 h1, h2 {
   letter-spacing: -3px;
+  position: relative;
+  left: -3px;
 }
 
 /* ---------- header ---------- */
@@ -42,9 +44,20 @@ h1, h2 {
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--pad);
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+  background: #fff;
+  backdrop-filter: blur(5px);
+  transition: background 0.7s ease, backdrop-filter 0.7s ease, -webkit-backdrop-filter 0.7s ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(30px);
+}
+
+.site-header.is-scrolled:hover {
+  background: #fff;
+  backdrop-filter: blur(5px);
+  transition-duration: 100ms;
 }
 
 .site-header .logo img {
@@ -129,6 +142,7 @@ h1, h2 {
   line-height: 1.25;
   text-transform: uppercase;
   max-width: 22ch;
+  left: 0;
 }
 
 .hero h1 .boxed {
@@ -187,6 +201,8 @@ h1.display, h2.display {
   font-weight: 700;
   line-height: 1.2;
   max-width: 40ch;
+  position: relative;
+  left: -1px;
   text-wrap: balance;
 }
 
