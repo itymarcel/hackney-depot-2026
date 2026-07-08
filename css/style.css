@@ -186,7 +186,7 @@ h1.display, h2.display {
   font-size: clamp(1.4rem, 3.2vw, 2.5rem);
   font-weight: 700;
   line-height: 1.2;
-  max-width: 34ch;
+  max-width: 40ch;
   text-wrap: balance;
 }
 
@@ -218,6 +218,7 @@ h1.display, h2.display {
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
 figure figcaption {
+  display: none;
   margin-top: 0.5rem;
   font-size: 0.85rem;
   color: var(--grey);
@@ -302,6 +303,7 @@ figure figcaption {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
+  transition: background 0.05s, color 0.05s, border-color 0.05s;
 }
 
 .btn-solid {
@@ -323,10 +325,10 @@ figure figcaption {
   border-bottom: 1px solid var(--line);
 }
 
-.tenants li a,
-.tenants li span {
+.tenants li > a,
+.tenants li > span {
   display: flex;
-  align-items: baseline;
+  align-items: top;
   justify-content: space-between;
   gap: 2rem;
   padding: 0.9rem 0;
@@ -336,14 +338,41 @@ figure figcaption {
   text-decoration: none;
 }
 
-.tenants li i {
-  font-style: normal;
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: var(--grey);
-  text-align: right;
+.tenants li img {
+  width: clamp(1.5rem, 3vw, 2.4rem);
+  height: auto;
   flex-shrink: 0;
 }
+
+.tenants li:hover img { filter: invert(13%) sepia(98%) saturate(5615%) hue-rotate(334deg) brightness(93%) contrast(105%); }
+
+.contact-list {
+  list-style: none;
+  border-top: 1px solid var(--black);
+}
+
+.contact-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-list span:first-child {
+  font-size: 0.85rem;
+  color: var(--grey);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.contact-list a {
+  font-weight: 700;
+  text-align: right;
+  text-decoration: none;
+}
+
+.contact-list a:hover { color: var(--accent); }
 
 .tenants li:hover { color: var(--accent); }
 
